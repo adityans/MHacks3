@@ -92,6 +92,13 @@ body {
   background-color: #FFCB4C;
 }
 
+.col-lg-12 {
+  padding-top:20px;
+  padding-bottom:20px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
