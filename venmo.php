@@ -4,19 +4,13 @@
 
  	public $apiSecret = "6UHgQf2wDX2c6YScHf9Z73ku3v8tNsRj";
  	public $apiID = "1552";
- 	private $accessToken;
 
  	public function login()
 	{
 		header("Location: https://api.venmo.com/v1/oauth/authorize?client_id=1552&scope=make_payments%20access_profile");
 	}
-
-	public function setToken()
-	{
-		$accessToken = $_REQUEST['access_token'];
-	}
 	
-	public function getUserData()
+	public function getUserData($accessToken)
 	{
 		 $header = array(
         'Authorization: Bearer ' . $accessToken,
@@ -45,12 +39,12 @@
     	}
 	}
 
-	public function accessData($jsonObject)
+	public accessData($jsonObject)
 	{
 		return json_decode($jsonObject);
 	}
 
-	public function makePayment($recipientID, $notes, $amount)
+	public function makePayment($accessToken, $recipientID, $notes, $amount)
 	{
 		 $header = array(
         'Authorization: Bearer ' . $accessToken,
