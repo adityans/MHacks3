@@ -31,6 +31,23 @@ body {
   width:1px;
 }
 */
+
+.header-link a {
+  color: #FFB500;
+}
+
+.list-item a{
+  color: #FFB500
+}
+
+.text-muted a{
+  color: #FFB500;
+}
+
+.text-muted a:hover{
+  text-decoration:none;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
