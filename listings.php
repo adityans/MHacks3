@@ -32,7 +32,8 @@ $numEntries = mysql_num_rows($result);
 while($numEntries > 0)
   {
   	$row = mysql_fetch_assoc($result);
-  	echo "<span>" . $row['Title'] . "</span>";
+	$taskId = $row['taskId'];
+  	echo "<span><a href='task.php?taskId=$taskId'>". $row['Title'] . "</a></span>";
   	echo "<br>";
   	$numEntries--;
   }

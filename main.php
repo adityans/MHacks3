@@ -46,7 +46,7 @@ $_SESSION['lastName'] = $data['data']['user']['firstName'];
 $_SESSION['userId'] = $userId;
 $_SESSION['email'] = $data['data']['user']['email'];
 
-$updateToken = "UPDATE users SET accessToken=$token WHERE userId = '$userId'";
+$updateToken = "UPDATE users SET accessToken='$token' WHERE userId='$userId'";
 
 mysql_query($updateToken) or die("update failed");
 

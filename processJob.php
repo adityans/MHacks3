@@ -9,9 +9,10 @@
 
 
  $posterId = $_SESSION['userId'];
+ $school = $_SESSION['school'];
 
-$sql = "INSERT INTO posts (Title, description, price, neededWhen, posterId, takenStatus, takenBy) 
-		VALUES ('$title','$description','$price', '$date', '$posterId', 'false', '0')";
+$sql = "INSERT INTO posts (Title, description, price, neededWhen, posterId, takenStatus, takenBy, school) 
+		VALUES ('$title','$description','$price', '$date', '$posterId', 'false', '0', '$school')";
 
 mysql_query($sql) or die("error");
 
