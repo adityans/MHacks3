@@ -15,7 +15,7 @@
     <link href="FrontEnd/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="FrontEnd/enterEmail.css" rel="stylesheet">
+    <link href="FrontEnd/taskwal.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -76,35 +76,35 @@ function checkForm(form)
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="https://api.venmo.com/v1/oauth/authorize?client_id=1552&scope=make_payments%20access_profile">Sign Up</a></li>
+          <li class="header-link"><a href="https://api.venmo.com/v1/oauth/authorize?client_id=1552&scope=make_payments%20access_profile">Sign Up</a></li>
           <!--<div class="vertical-rule"></div>-->
-          <li><a href="https://api.venmo.com/v1/oauth/authorize?client_id=1552&scope=make_payments%20access_profile">Login</a></li>
+          <li class="header-link"><a href="https://api.venmo.com/v1/oauth/authorize?client_id=1552&scope=make_payments%20access_profile">Login</a></li>
         </ul>
-       <h3 class="text-muted">taskwal</h3>
+       <h3 class="text-muted"><a href="index.html">taskwal</a></h3>
      </div>
-
-<div class="btn-group">
-=======
-
-<h2>Please Enter Your Email Address to Make an Account</h2><br />
 
 <form name = "email" action = "processEmail.php" method = "post"
 	onsubmit = "return checkForm(this);">
 	<select name = "schoolChoice"> 
 			<option value = "none">Please Select Your School</option>
 		<option value = "umich">University of Michigan</option>
-		<option value = "mit">MIT</option>
+		<option value = "mit">Massachusetts Institute of Technology</option>
 		<option value = "illinois">University of Illinois</option>
 		<option value = "purdue">Purdue University</option>
 		<option value = "osu">Ohio State University</option>
 		<option value = "msu">Michigan State University</option>
 		<option value = "iu">Indiana Unviersity</option>
 	</select>
-	<br />
-	<span>Please Enter your .edu email address</span><br />
-	<input type = "text" name = "email"><br />
-	<input type = "submit" value = "Enter">
+	</br>
+</br>
+	<div class="form-group">
+		<label for="InputEmail">Email Address</label>
+		<input type="email" class="form-control" id="InputEmail" placeholder ="Enter Email">
+	</div>
+	<button type ="submit" value ="Enter" class="btn btn-default">Submit</button>
 </form>
+</br>
+
 <div class="footer">
         <ul class="footer-links group">
             <li class="list-item"><a href="/info/product" >About</a></li>
