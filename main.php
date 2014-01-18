@@ -24,7 +24,7 @@ $data = json_decode($userData, true);
 $userId = $data['data']['user']['id'];
 
 
-$idQuery = "SELECT userId FROM users WHERE userId='$userId'";
+$idQuery = "SELECT school FROM users WHERE userId='$userId'";
 
 
 $idReturn = mysql_query($idQuery);
@@ -37,6 +37,9 @@ if(!(mysql_num_rows($idReturn)))
 }
 
 
+$row = mysql_fetch_assoc($idReturn);
+
+$_SESSION['school'] = $row['school'];
 
 $_SESSION['firstName'] = $data['data']['user']['first_name'];
 $_SESSION['lastName'] = $data['data']['user']['firstName'];
