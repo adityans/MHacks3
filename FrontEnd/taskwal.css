@@ -24,13 +24,6 @@ body {
   line-height: 40px;
   padding-bottom: 19px;
 }
-/*
-.vertical-rule {
-  display:inline;
-  border-left: thin solid #000000;
-  width:1px;
-}
-*/
 
 .header-link a {
   color: #FFB500;

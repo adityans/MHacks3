@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -76,12 +76,10 @@ function checkForm(form)
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="header-link"><a href="https://api.venmo.com/v1/oauth/authorize?client_id=1552&scope=make_payments%20access_profile">Sign Up</a></li>
-          <!--<div class="vertical-rule"></div>-->
-          <li class="header-link"><a href="https://api.venmo.com/v1/oauth/authorize?client_id=1552&scope=make_payments%20access_profile">Login</a></li>
+          <li class="header-link"><a href="index.html">Sign Out</a></li>
         </ul>
        <h3 class="text-muted"><a href="index.html">taskwal</a></h3>
-     </div>
+   </div>
 
 <form name = "email" action = "processEmail.php" method = "post"
 	onsubmit = "return checkForm(this);">
@@ -134,6 +132,5 @@ function checkForm(form)
     <!-- Placed at the end of the document so the pages load faster -->
   </body>
 </html>
-
 
 
