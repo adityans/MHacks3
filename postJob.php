@@ -37,6 +37,7 @@
    </div>
 
 	<form name = "task" action = "processJob.php" method = "post">
+<<<<<<< HEAD
 		<fieldset>
 			<legend>Post the Task You Want Completed</legend>
 			<div class="jobfield">
@@ -77,6 +78,13 @@
 
         <div id="social-buttons">
             <div class="fb-like" data-href="https://www.facebook.com/taskwal" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>        
+=======
+		Title: <input type = "text" name = "title" /> <br>
+		Price: $<input type = "text" name = "price" /> <br>
+		When do you need it by?: <input type = "datetime" name = "date"/> <br>
+		Description: <textarea cols = "40" rows = "5" name = "description"> description </textarea> <br>
+		<input type = "submit" value = "Submit" />
+>>>>>>> 7e22e7577c800e16ebcb1047ac6fcb21e428be3b
 
             <a href="https://twitter.com/taskwal" class="twitter-follow-button" data-show-count="false">Follow @vtaskwal</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

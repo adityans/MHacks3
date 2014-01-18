@@ -84,7 +84,7 @@ function checkForm(form)
 <form name = "email" action = "processEmail.php" method = "post"
 	onsubmit = "return checkForm(this);">
 	<select name = "schoolChoice"> 
-			<option value = "none">Please Select Your School</option>
+		<option value = "none">Please Select Your School</option>
 		<option value = "umich">University of Michigan</option>
 		<option value = "mit">Massachusetts Institute of Technology</option>
 		<option value = "illinois">University of Illinois</option>
@@ -97,7 +97,7 @@ function checkForm(form)
 </br>
 	<div class="form-group">
 		<label for="InputEmail">Email Address</label>
-		<input type="email" class="form-control" id="InputEmail" placeholder ="Enter Email">
+		<input name = "email" type="name" class="form-control" id="InputEmail" placeholder ="Enter Email">
 	</div>
 	<button type ="submit" value ="Enter" class="btn btn-default">Submit</button>
 </form>
