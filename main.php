@@ -17,14 +17,19 @@ $data = json_decode($userData, true);
 
 $userId = $data['data']['user']['id'];
 
-$idQuery = "SELECT userId FROM users WHERE userId = '$userId'";
+
+$idQuery = "SELECT userId FROM users WHERE userId='$userId'";
+
 
 $idReturn = mysql_query($idQuery);
+
+
 
 
 if(!(mysql_num_rows($idReturn)))
 {
 	header("Location: enterEmail.php");
+	die();
 }
 
 

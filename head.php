@@ -1,5 +1,7 @@
 <?php
 
+require_once 'functions.php';
+
 $dbhost = 'localhost';
 $dbname = 'helpMe';
 $dbuser = 'root';
