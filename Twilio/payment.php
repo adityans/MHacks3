@@ -1,6 +1,6 @@
 <?php
 	
-	require_once "venmo.php";
+	require_once "../venmo.php";
 
 	$accessToken = $_REQUEST['access_token'];
 	$cost = $_REQUEST['cost'];
@@ -9,6 +9,10 @@
 
 	$pay = new Venmo;
 
-	$pay->makePayment($accessToken, $serviceProvider, "payment on taskwal", $cost)
+	$status = $pay->makePayment($accessToken, $serviceProvider, "payment on taskwal", $cost);
 
-	echo "thank you for using taskwal!"
+	print_r($status);
+
+	echo "thank you for using taskwal!";
+
+?>
