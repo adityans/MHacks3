@@ -1,47 +1,39 @@
 <?php
 
 require_once "venmo.php";
-require("head.php");
+require_once "head.php";
 
 
 
 
 
 $token = $_REQUEST['access_token'];
-echo ($token);
-session_start();
 $_SESSION['token'] = $token;
 
 
 $dev = new Venmo;
-$dev->setToken();
-$userData = $dev->getUserData();
+$userData = $dev->getUserData($token);
 $data = json_decode($userData, true);
 
 $userId = $data['data']['user']['id'];
 
-$idQuery = "SELECT userId WHERE userId = '$userId'";
+$idQuery = "SELECT userId FROM users WHERE userId = '$userId'";
 
 $idReturn = mysql_query($idQuery);
 
+
 if(!(mysql_num_rows($idReturn)))
 {
-	echo "<h2>Please Enter Your Email Address to Make an Account</h2>";
-	include_once 'enterEmail.php';
-	die();
+	header("Location: enterEmail.php");
 }
 
 
-echo "welcome " . $data['data']['user']['username'];
+$_SESSION['firstName'] = $data['data']['user']['first_name'];
+$_SESSION['lastName'] = $data['data']['user']['firstName'];
+$_SESSION['userId'] = $userId;
+$_SESSION['email'] = $data['data']['user']['email'];
 
-header("Location: test.php");
-
-
-
-
-
-
-
+header("Location: listings.php");
 
 
 
