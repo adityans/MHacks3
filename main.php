@@ -25,20 +25,15 @@ $idReturn = mysql_query($idQuery);
 if(!(mysql_num_rows($idReturn)))
 {
 	header("Location: enterEmail.php");
-	die();
 }
 
 
-echo "welcome " . $data['data']['user']['username'];
+$_SESSION['firstName'] = $data['data']['user']['first_name'];
+$_SESSION['lastName'] = $data['data']['user']['firstName'];
+$_SESSION['userId'] = $userId;
+$_SESSION['email'] = $data['data']['user']['email'];
 
-header("Location: test.php");
-
-
-
-
-
-
-
+header("Location: listings.php");
 
 
 
