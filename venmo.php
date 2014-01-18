@@ -39,7 +39,7 @@
     	}
 	}
 
-	public function accessData($jsonObject)
+	public accessData($jsonObject)
 	{
 		return json_decode($jsonObject);
 	}
