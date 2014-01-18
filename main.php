@@ -7,11 +7,19 @@ require_once "head.php";
 
 
 
-$token = $_REQUEST['access_token'];
-$_SESSION['token'] = $token;
+$code = $_REQUEST['code'];
+
+print_r($code);
+
 
 
 $dev = new Venmo;
+$auth = $dev->getAccess($code);
+$serverAuth = json_decode($auth, true);
+$_SESSION['token'] = $serverAuth["access_token"];
+$token = $_SESSION['token'];
+
+
 $userData = $dev->getUserData($token);
 $data = json_decode($userData, true);
 
@@ -28,7 +36,7 @@ $idReturn = mysql_query($idQuery);
 
 if(!(mysql_num_rows($idReturn)))
 {
-	header("Location: enterEmail.php");
+//	header("Location: enterEmail.php");
 	die();
 }
 
@@ -38,7 +46,7 @@ $_SESSION['lastName'] = $data['data']['user']['firstName'];
 $_SESSION['userId'] = $userId;
 $_SESSION['email'] = $data['data']['user']['email'];
 
-header("Location: listings.php");
+//header("Location: listings.php");
 
 
 
