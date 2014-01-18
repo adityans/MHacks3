@@ -6,10 +6,14 @@
  $date = $_POST['date'];
  $description = $_POST['description'];
 
-$sql = "INSERT INTO `posts`(`Title`, `description`, `price`, `Date`) VALUES ('$title','$description','$price', '$date') ";
+
+ $posterId = $_SESSION['userId'];
+
+$sql = "INSERT INTO posts VALUES ('$title','$description','$price', '$date', '$posterId', '1', 'false')";
 
 mysql_query($sql) or die("error");
 
 header("Location: listings.php");
+
 
 ?>
