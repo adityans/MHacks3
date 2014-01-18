@@ -38,7 +38,7 @@
 
 	<form name = "task" action = "processJob.php" method = "post">
 		<fieldset>
-			<legend>Post the Task You Want Completed</legend>
+			<legend class="secondline">Post the Task You Want Completed</legend>
 			<div class="jobfield">
 				<label type="text" >Title of task</label>
 				<input name="title" type="text" placeholder="Title">
