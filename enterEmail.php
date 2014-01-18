@@ -43,6 +43,9 @@ function checkForm(form)
 
 </script>
 
+
+<h2>Please Enter Your Email Address to Make an Account</h2><br />
+
 <form name = "email" action = "processEmail.php" method = "post"
 	onsubmit = "return checkForm(this);">
 	<select name = "schoolChoice">
