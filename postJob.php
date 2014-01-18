@@ -40,21 +40,21 @@
 		<fieldset>
 			<legend>Post the Task You Want Completed</legend>
 			<div class="jobfield">
-				<label type="text" name="title">Title of task</label>
-				<input type="text" placeholder="Title">
+				<label type="text" >Title of task</label>
+				<input name="title" type="text" placeholder="Title">
 			</div>
 			<div class="jobfield">
 				<span class="add-on">$</span>
-				<label type="text" name="price">Reward for completion of the task</label>
-				<input type="text" placeholder="Reward">
+				<label type="text" >Reward for completion of the task</label>
+				<input name="price" type="text" placeholder="Reward">
 			</div>
 			<div class="jobfield">
-				<label class="jobfield" type="text" name="date">When do you need this done by?</label>
-				<input type="text" placeholder="When">
+				<label class="jobfield" type="text">When do you need this done by?</label>
+				<input name = "date" type="text" placeholder="When">
 			</div>
 			<div class="jobfield">
 				<label class="jobfield" type="text" name="description">Description of Task</label>
-				<textarea rows="5" cols="75" placeholder="Write a quick description"></textarea>
+				<textarea name = "description" rows="5" cols="75" placeholder="Write a quick description"></textarea>
 			</div>
 			<div class="jobfield">
 				<button type ="submit" value ="Enter" class="btn btn-default">Submit</button>

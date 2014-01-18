@@ -22,12 +22,19 @@ echo "<h2>Welcome " . $firstName . "</h2>";
 
 echo "<h3>Postings: </h3>";
 
-$result = mysql_query("SELECT * FROM posts");
+$school = $_SESSION['school'];
 
-while($row = mysql_fetch_assoc($result))
+$result = mysql_query("SELECT * FROM posts WHERE school='$school'");
+
+
+$numEntries = mysql_num_rows($result);
+
+while($numEntries > 0)
   {
-  	echo "<span>" . $row['title'] . "</span>";
+  	$row = mysql_fetch_assoc($result);
+  	echo "<span>" . $row['Title'] . "</span>";
   	echo "<br>";
+  	$numEntries--;
   }
 
 
