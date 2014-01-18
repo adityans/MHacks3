@@ -39,18 +39,18 @@
     	}
 	}
 
-	public accessData($jsonObject)
+	public function accessData($jsonObject)
 	{
 		return json_decode($jsonObject);
 	}
 
-	public function makePayment($accessToken, $recipient)
+	public function makePayment($accessToken, $recipientID, $notes, $amount)
 	{
 		 $header = array(
         'Authorization: Bearer ' . $accessToken,
         );
 
-		$request = "https://api.venmo.com/v1/payments?email=" . $recipient;
+		$request = "https://api.venmo.com/v1/payments?email=" . $recipientID . "&note=" . $notes . "&amount=" . $amount;
 
 		$ch = curl_init($request);
 
