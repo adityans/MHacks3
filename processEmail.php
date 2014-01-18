@@ -15,6 +15,7 @@ else
 
 
 $dev = new Venmo;
+$dev->setToken();
 $userData = $dev->getUserData();
 $userInfo = $dev->accessData($userData);
 
