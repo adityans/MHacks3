@@ -9,8 +9,6 @@ require_once "head.php";
 
 $code = $_REQUEST['code'];
 
-print_r($code);
-
 
 
 $dev = new Venmo;
@@ -34,9 +32,10 @@ $idReturn = mysql_query($idQuery);
 
 if(!(mysql_num_rows($idReturn)))
 {
-//	header("Location: enterEmail.php");
+	header("Location: enterEmail.php");
 	die();
 }
+
 
 
 $_SESSION['firstName'] = $data['data']['user']['first_name'];
@@ -44,7 +43,12 @@ $_SESSION['lastName'] = $data['data']['user']['firstName'];
 $_SESSION['userId'] = $userId;
 $_SESSION['email'] = $data['data']['user']['email'];
 
-//header("Location: listings.php");
+$updateToken = "UPDATE users SET accessToken=$token WHERE userId = '$userId'";
+
+mysql_query($updateToken) or die("update failed");
+
+
+header("Location: listings.php");
 
 
 

@@ -9,7 +9,7 @@
 
  $posterId = $_SESSION['userId'];
 
-$sql = "INSERT INTO posts VALUES ('$title','$description','$price', '$date', '$posterId', '1', 'false')";
+$sql = "INSERT INTO posts VALUES ('$title','$description','$price', '$date', '$posterId', '1', 'false', '0')";
 
 mysql_query($sql) or die("error");
 

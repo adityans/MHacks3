@@ -4,7 +4,7 @@ require_once 'head.php';
 
 if(!isset($_SESSION['userId']))
 {
-	header('Location: index.html')	
+	header('Location: index.html');
 }
 
 
