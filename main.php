@@ -1,8 +1,13 @@
 <?php
 
 require_once "venmo.php";
+require("head.php");
 
 $token = $_REQUEST['access_token'];
+echo ($token);
+session_start();
+$_SESSION['token'] = $token;
+
 
 $dev = new Venmo;
 $userData = $dev->getUserData($token);
@@ -10,11 +15,7 @@ $data = json_decode($userData, true);
 
 echo "welcome " . $data['data']['user']['username'];
 
-echo "making payment to Karan Vishwanathan";
-
-$pay = $dev->makePayment($token, '248', 'test', '0.01');
-print_r($pay);
-
+header("Location: test.php");
 
 
 
