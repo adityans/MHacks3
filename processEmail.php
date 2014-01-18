@@ -4,6 +4,8 @@ require_once "venmo.php";
 require_once "head.php";
 
 
+
+
 if(isset($_POST['schoolChoice']) && isset($_POST['email']))
 {
 	$school = $_POST['schoolChoice'];
@@ -23,14 +25,15 @@ $userInfo = json_decode($userData, true);
 $firstName = $userInfo['data']['user']['first_name'];
 $lastName = $userInfo['data']['user']['last_name'];
 $userId = $userInfo['data']['user']['id'];
+$phoneNumber = $userInfo['data']['user']['phone'];
 
 
 $addQuery = "INSERT INTO users VALUES ('$school', '$email', '$firstName', 
-			'$lastName', '$userId')";
+			'$lastName', '$userId', '$phoneNumber', '$token')";
 
 mysql_query($addQuery) or die("error");
 
-header('Location: listings.php')
+header('Location: main.php')
 
 
 ?>
