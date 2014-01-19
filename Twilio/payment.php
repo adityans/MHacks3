@@ -1,18 +1,34 @@
 <?php
 	
+	require_once '../head.php';
 	require_once "../venmo.php";
 
-	$accessToken = $_REQUEST['access_token'];
-	$cost = $_REQUEST['cost'];
-	$serviceProvider = $_REQUEST['deliverId'];
+	$accessToken = $_GET['access_token'];
+	$cost = $_GET['cost'];
+	$serviceProvider = $_GET['deliverId'];
+	$taskId = $_GET['taskId'];
 
 
-	$pay = new Venmo;
+	$resultTask = mysql_query("SELECT Title FROM posts WHERE taskId='$taskId'") or die("error result task");
 
-	$status = $pay->makePayment($accessToken, $serviceProvider, "payment on taskwal", $cost);
+	$numMatching = mysql_num_rows($resultTask);
 
-	print_r($status);
+	if(!$numMatching)
+	{
+		header('Location: ../index.html');
+		die();
+	}
+	else
+	{
+		$pay = new Venmo;
 
-	echo "thank you for using taskwal!";
+		$status = $pay->makePayment($accessToken, $serviceProvider, "payment on taskwal", $cost);
+
+		mysql_query("DELETE FROM posts WHERE taskId='$taskId'") or die("error delete");
+
+		print_r($status);
+
+		echo "thank you for using taskwal!";
+	}	
 
 ?>

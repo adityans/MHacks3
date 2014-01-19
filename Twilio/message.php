@@ -60,7 +60,8 @@ $recipToken = $rowReceiver['accessToken'];
 
 
 $client = new Services_Twilio($sid, $token);
-$url = "https://localhost/MHacks3/Twilio/payment.php?cost=" . $cost . '&deliverId=' . $deliverId . '&access_token=' . $recipToken;
+$url = "https://localhost/MHacks3/Twilio/payment.php?cost=" . $cost . '&deliverId=' . $deliverId . '&access_token=' . $recipToken. 
+		'&taskId=' . $task_Id;
 $client->account->messages->sendMessage("19788199169", $recipientNumber, "your task is being performed by " . $SenderName . ".Please visit " . $url . " to confirm payment");
 
 
