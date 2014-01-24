@@ -85,14 +85,23 @@
         'Authorization: Bearer ' . $accessToken,
         );
 
-		$request = "https://api.venmo.com/v1/payments?email=" . $recipientID . "&note=" . $notes . "&amount=" . $amount;
+		$request = "https://api.venmo.com/v1/payments";
 
 		$ch = curl_init($request);
 
+        curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     	curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+
+        $requestBody = array(
+            'user_id' => $recipientID,
+            'note' => "payment through taskwall",
+            'amount' => $amount,
+        );
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody);
 
     	$response = curl_exec($ch);
     	$error = curl_error($ch);

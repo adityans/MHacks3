@@ -25,9 +25,6 @@
 		$status = $pay->makePayment($accessToken, $serviceProvider, "payment on taskwal", $cost);
 
 		mysql_query("DELETE FROM posts WHERE taskId='$taskId'") or die("error delete");
-
-		print_r($status);
-
 		echo "thank you for using taskwal!";
 	}	
 

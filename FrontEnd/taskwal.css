@@ -21,24 +21,36 @@ body {
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+  line-height: 0px;
+  padding-bottom: 0px;
 }
 
 .header-link a {
-  color: #FFB500;
+  color: #FF7200;
+}
+
+.header-link a:hover {
+  text-decoration:underline;
+}
+
+.text-muted text-under {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .list-item a{
-  color: #FFB500
+  color: #FF7200;
 }
 
 .nav {
-  color: #FFB500;
+  color: #FF7200;
 }
 
+.logo {
+  padding-bottom:0px;
+}
 .text-muted a{
-  color: #FFB500;
+  color: #FF7200;
 }
 
 .text-muted a:hover{
@@ -73,6 +85,10 @@ body {
   margin: 30px 0;
 }
 
+.jumbotron listings {
+  
+}
+
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
@@ -81,15 +97,15 @@ body {
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
-  border-color: #FFB500;
+  border-color: #FF7200;
 }
 
 .btn-success {
-  background-color: #FFB500;
+  background-color: #FF7200;
 }
 
 .btn-success:hover {
-  background-color: #FFCB4C;
+  background-color: #FF8E33;
 }
 
 .col-lg-12 {
@@ -103,6 +119,55 @@ body {
   border-bottom: none;
   padding-bottom:0px;
   margin-bottom:0px;
+}
+
+.postingHeading {
+  padding-bottom:20px;
+}
+
+.firstName {
+  color: #FF7200;
+}
+
+.tasklinks a{
+  color: #FF7200;
+}
+
+.tasklinks a:hover {
+  text-decoration:none;
+}
+
+.title {
+  color: #FF7200;
+}
+
+.takejob a{
+  color: #FF7200;
+}
+
+.signup a {
+  color: #FF7200;
+}
+
+.signup a:hover {
+  text-decoration:none;
+}
+
+.listingslink {
+  margin-top:20px;
+}
+
+.listingslink a {
+  color: #FF7200;
+}
+
+.listingslink a:hover {
+  text-decoration:none;
+}
+
+.descriptions {
+  margin-right: 10px;
+  font-size: 24px;
 }
 
 /* Supporting marketing content */

@@ -31,29 +31,30 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="header-link"><a href="index.html">Sign Out</a></li>
+          <li class="header-link"><a href="logout.php">Sign Out</a></li>
         </ul>
-       <h3 class="text-muted"><a href="index.html">taskwal</a></h3>
+       <h2 class="text-muted"><a href="listings.php">taskwal</a></h2>
+       <h6 class="text-muted text-under">Peersourced Task Completion</h6>
    </div>
 
 	<form name = "task" action = "processJob.php" method = "post">
 		<fieldset>
 			<legend class="secondline">Post the Task You Want Completed</legend>
 			<div class="jobfield">
-				<label type="text" >Title of task</label>
+				<label type="text" >Title of task   </label>
 				<input name="title" type="text" placeholder="Title">
 			</div>
 			<div class="jobfield">
-				<span class="add-on">$</span>
-				<label type="text" >Reward for completion of the task</label>
-				<input name="price" type="text" placeholder="Reward">
+				<label type="text" >Compensation for completion of the task</label>
+        <span class="add-on">$   </span>
+				<input name="price" type="number" step = ".01" placeholder="Amount in Dollars">
 			</div>
 			<div class="jobfield">
-				<label class="jobfield" type="text">When do you need this done by?</label>
+				<label class="jobfield" type="text">When do you need this done by?   </label>
 				<input name = "date" type="text" placeholder="When">
 			</div>
 			<div class="jobfield">
-				<label class="jobfield" type="text" name="description">Description of Task</label>
+				<label class="jobfield" type="text" name="description">Description of Task   </label>
 				<textarea name = "description" rows="5" cols="75" placeholder="Write a quick description"></textarea>
 			</div>
 			<div class="jobfield">

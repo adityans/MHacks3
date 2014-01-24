@@ -29,41 +29,35 @@ else
 $resultTask = mysql_query("SELECT * FROM posts WHERE taskId='$task_Id'");
 $rowTask = mysql_fetch_assoc($resultTask);
 
+
+
 $receiverId = $rowTask['posterId'];
 $cost = $rowTask['price'];
 $description = $rowTask['description'];
 
-mysql_query("UPDATE posts SET takenStatus=1 WHERE taskId='$task_Id'") or die("error taken status");
-
-mysql_query("UPDATE posts SET takenBy='$deliverId' WHERE taskId='$task_Id'") or die("error taken by");
-
+mysql_query("UPDATE posts SET takenStatus='1' WHERE taskId='$task_Id'") or die("error taken status");
+mysql_query("UPDATE posts SET takenBy ='$deliverId' WHERE taskId='$task_Id'") or die("error taken by");
 
 
-$resultRecip = mysql_query("SELECT phoneNumber, accessToken FROM users WHERE userId='$receiverId'");
-
+$resultRecip = mysql_query("SELECT phoneNumber, accessToken, firstName, lastName FROM users WHERE userId='$receiverId'");
 $rowReceiver = mysql_fetch_assoc($resultRecip);
-
-
-
 
 $resultDeliver = mysql_query("SELECT firstName, lastName FROM users WHERE userId='$deliverId'");
 $rowDeliver = mysql_fetch_assoc($resultDeliver);
 
-
-
-
-
 $recipientNumber =  $rowReceiver['phoneNumber'];//fill in with poster number
-$SenderName = $rowDeliver['firstName'] . ' ' . $rowDeliver['lastName'];  //fll in sender name
+$receivefirst= $rowReceiver['firstName'];
+$receiveLast = $rowReceiver['lastName'];
+
+$SenderName = $rowDeliver['firstName'] . ' ' . $rowDeliver['lastName'];  //not this
 
 $recipToken = $rowReceiver['accessToken'];
 
-
 $client = new Services_Twilio($sid, $token);
-$url = "https://localhost/MHacks3/Twilio/payment.php?cost=" . $cost . '&deliverId=' . $deliverId . '&access_token=' . $recipToken. 
+$url = "http://taskwal-playnow.rhcloud.com/Twilio/payment.php?cost=" . $cost . '&deliverId=' . $deliverId . '&access_token=' . $recipToken. 
 		'&taskId=' . $task_Id;
-$client->account->messages->sendMessage("19788199169", $recipientNumber, "your task is being performed by " . $SenderName . ".Please visit " . $url . " to confirm payment");
-
+$client->account->messages->sendMessage("19788199169", $recipientNumber, "Your task is being performed by " . $SenderName . ".Please visit " . $url . " to confirm payment");
+header('Location: http://taskwal-playnow.rhcloud.com/finalflow.php?transaction_id=' . $task_Id . '&phoneNumber=' . $recipientNumber . '&FirstName=' . $receivefirst . '&LastName='. $receiveLast);
 
 ?>
 

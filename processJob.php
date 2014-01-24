@@ -11,8 +11,10 @@
  $posterId = $_SESSION['userId'];
  $school = $_SESSION['school'];
 
-$sql = "INSERT INTO posts (Title, description, price, neededWhen, posterId, takenStatus, takenBy, school) 
-		VALUES ('$title','$description','$price', '$date', '$posterId', 'false', '0', '$school')";
+ $dateAdded = date('Y-m-d H:i:s', time());
+
+$sql = "INSERT INTO posts (Title, description, price, neededWhen, posterId, takenStatus, takenBy, school, timeEntered) 
+		VALUES ('$title','$description','$price', '$date', '$posterId', 'false', '0', '$school', '$dateAdded')";
 
 mysql_query($sql) or die("error");
 
