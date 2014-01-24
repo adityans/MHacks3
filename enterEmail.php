@@ -26,6 +26,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
+
 <script>
 
 function checkForm(form)
@@ -69,14 +70,15 @@ function checkForm(form)
 }
 </script>
 
-    <body>
-    <!--Header -->
+ <body>
+ 	<!--Header -->
     <div class="container">
       <div class="header">
        <h2 class="text-muted"><a href="listings.php">taskwal</a></h2>
        <h6 class="text-muted text-under">Peersourced Task Completion</h6>
    </div>
 <form name = "emailForm" action = "processEmail.php" method = "post"
+		<form name = "email" action = "processEmail.php" method = "post"
 	onsubmit = "return checkForm(this);">
 	<select name = "schoolChoice"> 
 		<option value = "none">Please Select Your School</option>
@@ -94,18 +96,20 @@ function checkForm(form)
         <option value = "umd">University of Maryland</option>
         <option value = "Yale">Yale University</option>
 	</select>
-	</br>
-</br>
 	<div class="form-group">
 		<label for="InputEmail">Email Address</label>
 		<input name = "email" type="text" class="form-control" id="InputEmail" placeholder ="Enter Email">
 	</div>
 	<button type ="submit" value ="Enter" class="btn btn-default">Submit</button>
 </form>
+<<<<<<< HEAD
 </div>
 </br>
 
 <div class="footer">
+=======
+		<div class="footer">
+>>>>>>> 7ebc859b50f74d5f7331ee2203b7559af5f94f9c
         <ul class="footer-links group">
             <li class="list-item"><a href="/info/product" >About</a></li>
             <li class="list-item"><a href="/info/fees" >Fees & FAQ</a></li>
@@ -117,20 +121,14 @@ function checkForm(form)
             <li class="list-item"><a href="/info/contact" >Contact</a></li>
         </ul>
         <div class="copyright">Copyright &copy; 2014 taskwal Inc. All Rights Reserved</div>
-
-
-        <div id="social-buttons">
+        <div id="social-buttons">       
             <a href="https://twitter.com/taskwal" class="twitter-follow-button" data-show-count="false">Follow @vtaskwal</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
       </div>
     </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  </body>
+</body>
 </html>
+
 
 
